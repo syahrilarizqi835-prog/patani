@@ -45,6 +45,11 @@ Route::get('/', function () {
     return view('landing.index');
 })->name('landing');
 
+Route::get('/linkstorage', function () {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    return 'Storage linked successfully! Anda sekarang bisa kembali ke aplikasi dan memuat ulang halaman.';
+});
+
 
 // ==========================
 // Authentication Routes
